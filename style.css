@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background: #c9d6ff;
+  background: -webkit-linear-gradient(to right, #e2e2e2, #c9d6ff);
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Open Sans", sans-serif;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+}
+
+.mobile-container {
+  width: 400px;
+  background-color: #fff;
+  box-shadow: 0 0 10px 10px #1f1e1e1a;
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+header input {
+  background-color: #eee;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  border: none;
+  font-family: inherit;
+}
+
+header button {
+  background-color: transparent;
+  border: none;
+  color: rgb(156, 168, 168);
+  font-size: 1.2rem;
+  margin-left: 10px;
+}
+
+.fav-container {
+  background-color: rgb(222, 238, 243);
+  padding: 0.8rem 1rem;
+  text-align: center;
+}
+
+.fav-meals {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.fav-meals li {
+  width: 75px;
+  margin: 5px;
+}
+
+.fav-meals li img {
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 10px 5px #2727271a;
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
+}
+
+.fav-meals li span {
+  font-size: 1rem;
+}
+
+.meal {
+  margin: 1.5rem;
+  box-shadow: 0 0 10px 5px #2727271a;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.meal-header {
+  position: relative;
+}
+
+.meal-header .random {
+  position: absolute;
+  top: 1rem;
+  background-color: #fff;
+  padding: 0.25rem 1rem;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.meal-header img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.meal-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.meal-body h4 {
+  margin: 0;
+}
+
+.meal-body .fav-btn {
+  border: none;
+  background-color: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: rgb(182, 174, 174);
+  text-decoration: none;
+  outline: none;
+}
+
+.meal-body .fav-btn.active {
+  color: rgb(255, 74, 74);
+  border: 0;
+  text-decoration: none;
+  outline: none;
+}
