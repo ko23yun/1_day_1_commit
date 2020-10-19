@@ -3,24 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Timer</title>
+    <title>Calculator-app</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
-    <h1>13시 45분 시작</h1>
-    <form id="form">
-      <input type="text" name="userTime" placeholder="write minutes" />
-      <input type="submit" class="btn" value="submit" />
-    </form>
-    <div id="formValue"></div>
-    <div id="demo"></div>
+    <nav>
+      <div class="cal-box">
+        <form class="form">
+          <input type="text" />
+          <input type="submit" class="btn" value="계산하기" />
+        </form>
+      </div>
+      <div class="sum"></div>
+    </nav>
   </body>
 </html>
-
-<!-- 시, 분, 초를 입력한다.
-시작버튼을 누른다.
-타임이 1초씩 줄어들고 일시정지 버튼과 초기화 버튼이 나온다.
-일시정지를 누르면 타이머가 멈추고 계속으로 글이 바뀌고 시간이 멈춘다.
-계속을 누르면 다시 일시정지로 바뀌고 시간이 다시 줄어든다.
-초기화를 누르면 처음 상태로 돌아간다. -->
