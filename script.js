@@ -1,62 +1,86 @@
-// 1' 59'' 부터 JS 시작
+const btn = document.querySelector(".btn");
+var x = document.getElementById("form");
+var form = document.getElementById("formValue");
 
-const meals = document.getElementById("meals");
+function startTimer(e) {
+  e.preventDefault();
+  var text = "";
+  text = x.elements[0].value;
 
-getRandomMeal();
+  //   form.innerHTML = text;
+  var textTime = text;
 
-async function getRandomMeal() {
-  const resp = await fetch(
-    "https://www.themealdb.com/api/json/v1/1/random.php"
-  );
-  const respData = await resp.json();
-  const randomMeal = respData.meals[0];
-
-  addMeal(randomMeal, true);
+  writeTime(textTime);
 }
 
-async function getMealById(id) {
-  const meal = await fetch(
-    "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + id
-  );
+function writeTime(val) {
+  var textTime = val;
+  //   console.log(textTime);
+
+  var time = textTime * 60;
+  var min = "";
+  var sec = "";
+
+  var x = setInterval(() => {
+    //   hour =
+    min = parseInt(time / 60);
+    sec = time % 60;
+
+    document.getElementById("demo").innerHTML = min + ":" + sec;
+    time--;
+
+    if (time < 0) {
+      clearInterval(x);
+
+      document.getElementById("demo").innerHTML = "시간초과";
+    }
+  }, 1000);
 }
 
-async function getMealsBySearch(term) {
-  const meals = await fetch(
-    "https://www.themealdb.com/api/json/v1/1/search.php?s=" + term
-  );
-}
+// function function1()
+// {
+//   var variable1=12;
+//   function2(variable1);
+// }
 
-function addMeal(mealData, random = false) {
-  const meal = document.createElement("div");
-  meal.classList.add("meal");
+// function function2(val)
+// {
+//   var variableOfFunction1 = val;
 
-  meal.innerHTML = `
-        <div class="meal-header">
-            ${
-              random
-                ? `
-            <span class="random"> Random Recipe </span>
-            `
-                : ""
-            }
-            <img
-                src="${mealData.strMealThumb}"
-                alt="${mealData.strMeal}"
-            />
-        </div>
-        <div class="meal-body">
-            <h4>${mealData.strMeal}</h4>
-            <button class="fav-btn" onclick="">
-                <i class="fas fa-heart"></i>
-            </button>
-        </div>
-    `;
+btn.addEventListener("click", startTimer);
 
-  const btn = meal.querySelector(".meal-body .fav-btn");
+// var time = text * 60;
+// var min = "";
+// var sec = "";
 
-  btn.addEventListener("click", () => {
-    btn.classList.toggle("active");
-  });
+// var x = setInterval(() => {
+//   min = parseInt(time / 60);
+//   sec = time % 60;
 
-  meals.appendChild(meal);
-}
+//   document.getElementById("demo").innerHTML = min + "분" + sec + "초";
+//   time--;
+
+//   if (time < 0) {
+//     clearInterval(x);
+
+//     document.getElementById("demo").innerHTML = "시간초과";
+//   }
+// }, 1000);
+
+// var time = text;
+// var min = "";
+// var sec = "";
+
+// var x = setInterval(() => {
+//   min = parseInt(time / 60);
+//   sec = time % 60;
+
+//   document.getElementById("demo").innerHTML = min + "분" + sec + "초";
+//   time--;
+
+//   if (time < 0) {
+//     clearInterval(x);
+
+//     document.getElementById("demo").innerHTML = "시간초과";
+//   }
+// }, 1000);
